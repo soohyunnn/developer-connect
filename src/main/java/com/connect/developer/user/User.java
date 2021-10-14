@@ -1,10 +1,11 @@
 package com.connect.developer.user;
 
+import lombok.Builder;
 import lombok.Getter;
 
 import java.util.List;
 
-@Getter
+@Builder
 public class User {
     private String name;
     private String nickname;

@@ -10,7 +10,15 @@ class UserTest {
 
     @Test
     void User_객체_생성_확인하기() {
-        User user = new User("최수현", "SOO", "soohyunnn", "test1234", Arrays.asList("프론트앤드", "백엔드"), "sksmsqodn20@gmail.com", 5L);
+        User user = User.builder()
+                .name("최수현")
+                .nickname("soo")
+                .userId("soohyunnn")
+                .password("test1234")
+                .interestingFields(Arrays.asList("프론트엔드", "백엔드"))
+                .email("sksmsqodn20@gmail.com")
+                .imageId(5L)
+                .build();
 
         String info = user.getInfo();
         
