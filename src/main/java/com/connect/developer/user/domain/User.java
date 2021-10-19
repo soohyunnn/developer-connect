@@ -5,10 +5,12 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Builder
@@ -37,7 +39,8 @@ public class User extends BaseTimeEntity {
 
     private Long imageId;
 
-
+    public User(String subject, String name, Collection<? extends GrantedAuthority> authorities) {
+    }
 
 
 //    public User(String name, String nickname, String userId, String password, List<String> interestingFields, String email, long imageId) {
