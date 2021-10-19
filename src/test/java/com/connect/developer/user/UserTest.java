@@ -12,7 +12,6 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @WebAppConfiguration
-@RunW
 @SpringBootTest
 class UserTest {
 

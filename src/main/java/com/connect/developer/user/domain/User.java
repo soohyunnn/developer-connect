@@ -1,8 +1,13 @@
 package com.connect.developer.user.domain;
 
+import com.connect.developer.common.BaseTimeEntity;
 import lombok.*;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
-public class User {
+public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +36,8 @@ public class User {
     private String email;
 
     private Long imageId;
+
+
 
 
 //    public User(String name, String nickname, String userId, String password, List<String> interestingFields, String email, long imageId) {
