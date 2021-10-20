@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Builder
 @Getter
@@ -38,6 +39,16 @@ public class User extends BaseTimeEntity {
     private String email;
 
     private Long imageId;
+
+    private boolean activated;  //활성화 여부
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_authority",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")}
+    )
+    private Set<Authority> authorities;
 
     public User(String subject, String name, Collection<? extends GrantedAuthority> authorities) {
     }
