@@ -27,18 +27,22 @@ public class UserDto {
     @Size(min = 3, max = 50)
     private String userId;
 
+    @NotNull
+    @Size(min = 3, max = 50)
+    private String email;
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotNull
     @Size(min = 3, max = 100)
     private String password;
 
     @NotNull
-    @Size(min = 3, max = 50)
     private List<String> interestingFields;
 
     @NotNull
-    @Size(min = 3, max = 50)
     private Long imageId;
+
+
 
 
 }

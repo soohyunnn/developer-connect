@@ -40,13 +40,13 @@ public class User extends BaseTimeEntity {
 
     private Long imageId;
 
-    private boolean activated;  //활성화 여부
+    private boolean activated = true;  //활성화 여부
 
     @ManyToMany
     @JoinTable(
             name = "user_authority",
-            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")}
+            joinColumns = {@JoinColumn(name = "id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "authorityName", referencedColumnName = "authorityName")}
     )
     private Set<Authority> authorities;
 
