@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService {
                 .name(userDto.getName())
                 .email(userDto.getEmail())
                 .imageId(userDto.getImageId())
+                .activated(true)
                 .build();
 
         return userRepository.save(user);
